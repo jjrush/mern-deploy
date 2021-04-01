@@ -17,7 +17,7 @@ const ListAll = (props) => {
         axios.get('http://localhost:8000/api/pirate')
             .then(res => setPirates(res.data));
 
-        socket.on("update_other_clients", pirate => {
+        socket.on("inform_other_ships", pirate => {
             setPirates(prevData => {return [pirate, ...prevData]})
         })
     }, [pirates])
