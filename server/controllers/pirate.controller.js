@@ -28,7 +28,7 @@ module.exports.getDetails = (request, response) => {
 module.exports.updatePirate = (request, response) => {
     Pirate.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
         .then(res => response.json(res))
-        .catch(err => response.json(err))
+        .catch(err => response.status(400).json(err))
 }
 
 module.exports.deletePirate = (request, response) => {

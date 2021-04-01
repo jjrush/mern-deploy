@@ -7,9 +7,9 @@ const PirateForm = (props) => {
     const [ price, setPrice ] = useState(initPrice);
     const [ description, setDescription ] = useState(initDescription);
 
-    const [ titleValidation, setTitleValidation ]= useState("");
-    const [ priceValidation, setPriceValidation ]= useState("");
-    const [ descValidation, setDescValidation ]= useState("");
+    const [ titleValidation, setTitleValidation ] = useState("");
+    const [ priceValidation, setPriceValidation ] = useState("");
+    const [ descValidation, setDescValidation ] = useState("");
 
     const onSubmitHandler = e => {
         e.preventDefault();
@@ -27,8 +27,9 @@ const PirateForm = (props) => {
             setTitleValidation("")
             setPriceValidation("")
             setDescValidation("")
+            onSubmit({title,price,description});
         }
-        onSubmit({title,price,description});
+        
     }
 
 
@@ -66,7 +67,7 @@ const PirateForm = (props) => {
                 <ul>
                 {/* frontend validations */}
                 {
-                    titleValidation && title === "" && !errors.title ?
+                    titleValidation !== "" && title === "" && !errors.title ?
                         <li className="validation-field">{titleValidation}</li>
                         : null
                 }
@@ -76,7 +77,7 @@ const PirateForm = (props) => {
                         : null
                 }
                 {
-                    descValidation && description === "" && !errors.description ?
+                    descValidation !== "" && description === "" && !errors.description ?
                             <li className="validation-field">{descValidation}</li>
                             : null
                 }
