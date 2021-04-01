@@ -25,8 +25,10 @@ module.exports.getDetails = (request, response) => {
         .catch(err => response.json(err))
 }
 
+// turn on validtions for edit
+const opts = {runValidators:true, new:true};
 module.exports.updatePirate = (request, response) => {
-    Pirate.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
+    Pirate.findOneAndUpdate({_id: request.params.id}, request.body, opts)
         .then(res => response.json(res))
         .catch(err => response.status(400).json(err))
 }
