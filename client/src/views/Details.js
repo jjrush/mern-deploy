@@ -5,7 +5,7 @@ import DeleteButton from '../components/DeleteButton';
 import PirateForm from '../components/PirateForm'
 
 const Details = (props) => {
-    const {errors} = props;
+    const {errors, setErrors} = props;
     const [pirate, setPirate] = useState({});
     const [loaded, setLoaded] = useState(false);
     const link = `http://localhost:8000/api/pirate/${props.id}`;
@@ -34,6 +34,7 @@ const Details = (props) => {
                     <PirateForm
                         onSubmit={updatePirate} 
                         errors={errors}
+                        setErrors={setErrors}
                         initTitle={pirate.title} 
                         initPrice={pirate.price} 
                         initDescription={pirate.description}
