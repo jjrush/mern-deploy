@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.App {
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px black;
+    height: 300px;
+    padding-left: 10px;
+}
+
+.btn-delete {
+    background-color: red;
+}
