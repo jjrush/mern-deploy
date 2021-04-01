@@ -42,9 +42,7 @@ const Main = (props) => {
             .catch(err=>{
                 console.log(err.response.data.errors);
                 setErrors(err.response.data.errors);
-            })     
-
-        
+            })      
     }
 
     return (
