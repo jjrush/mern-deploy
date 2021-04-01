@@ -18,12 +18,13 @@ const Details = (props) => {
             })
     }, [])
 
-    const updatePirate = (e) => {
-        pirate.title = e.title;
-        pirate.price = e.price;
-        pirate.description = e.description;
+    const updatePirate = (pirate) => {
         axios.put(link, pirate)
-            .then(navigate("/"));
+            .then(() => {navigate("/")})
+            .catch(err=>{
+                console.log(err.response.data.errors);
+                setErrors(err.response.data.errors);
+            })
     }
 
     return (
