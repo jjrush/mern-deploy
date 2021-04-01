@@ -1,0 +1,47 @@
+.pirateForm label {
+    color: grey;
+
+}
+
+.pirateForm p {
+    background-color: lightgrey;
+    width: 350px;
+    height: 40px;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+.titleField {
+    margin-left: 130px;
+    border-radius: 5px;
+}
+
+.priceField {
+    margin-left: 125px;
+    border-radius: 5px;
+}
+
+.descField {
+    margin-left: 79px;
+    border-radius: 5px;
+}   
+
+.btn-submit {
+    justify-content: left;
+    display: inline-block;
+}
+
+.validation {
+    width: 200px;
+    height: 10px;
+    background-color: red;
+    display: block;
+}
+
+.red-border {
+    border: 2px solid red;
+}
+
+.validation-field {
+    color: red;
+}

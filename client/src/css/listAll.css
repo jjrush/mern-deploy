@@ -1,0 +1,52 @@
+.showAllPirate h2 {
+    text-align: center;
+}
+
+.showAllPirate p {
+    background-color: none;
+}
+
+.singlePirate {
+    background-color: lightblue;
+    margin-bottom: 20px;
+    text-align:center;
+}
+
+.pirate-title {
+    display: inline;
+    vertical-align: middle; 
+    display:inline-block; 
+    background-color:coral;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 70px;
+    line-height: 40px;
+}
+
+.btn-edit {
+    margin-right: 285px;
+}
+
+.pirate-price {
+    display: inline;
+    background-color: whitesmoke;
+    height: 20px;
+    width: 80px;
+    border-radius: 20px;
+    justify-content: center;
+    float: right;
+}   
+
+.pirate-desc {
+    width: 340px;
+    background-color: white;
+    justify-content: center;
+    margin-left: 20px;
+    border-radius: 40px;
+    height: 50px;
+}
+
+span {
+    line-height: 50px;
+}
