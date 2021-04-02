@@ -22,6 +22,7 @@ const AddPirate = (props) => {
     }, [])
 
     const createPirate = pirate => {
+        console.log("subitting")
         axios.post('http://localhost:8000/api/pirate', pirate)
             .then( res => {
                 pirates.push(res.data);
