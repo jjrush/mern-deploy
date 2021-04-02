@@ -19,6 +19,11 @@ const PirateForm = (props) => {
     const onSubmitHandler = e => {
         e.preventDefault();
         setErrors([]);
+
+        setNameValidation("");
+        setBootyValidation("");
+        setImageValidation("");
+        setQuoteValidation("");
         
         if ( name === "" ) {
             setNameValidation("You must include a name");
@@ -34,20 +39,15 @@ const PirateForm = (props) => {
         if ( quote === "" ) {
             setQuoteValidation("You must include a quote");
         } 
-        if ( nameValidation === "")
-            console.log("here");
-        console.log(bootyValidation);
-        console.log(imageValidation);
-        console.log(quoteValidation);
 
-        console.log("pos" + position)
-        setNameValidation("");
-        setImageValidation("");
-        setBootyValidation("");
-        setQuoteValidation("");
-        console.log("Adding pirate")
-        onSubmit({name,image,booty,quote,pegLeg,eyePatch,hookHand,position});
-        
+        if ( nameValidation == "" && bootyValidation == "" && imageValidation == ""  && quoteValidation == "" )
+        {
+            setNameValidation("");
+            setImageValidation("");
+            setBootyValidation("");
+            setQuoteValidation("");
+            onSubmit({name,image,booty,quote,pegLeg,eyePatch,hookHand,position});
+        }
     }
 
     return (
