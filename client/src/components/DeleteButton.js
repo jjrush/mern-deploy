@@ -10,7 +10,7 @@ const DeleteButton = (props) => {
     }
     return (
         <button className="btn-delete" onClick={deletePirate}>
-            Delete
+            Walk the Plank
         </button>
     )
 }

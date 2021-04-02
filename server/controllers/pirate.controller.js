@@ -2,12 +2,10 @@ const Pirate = require('../models/pirate.model');
 
 
 module.exports.createPirate = (request, response) => {
-    const { title, price, description } = request.body;
+    const { name,image,booty,quote,position,pegLeg,eyePatch,hookHand } = request.body;
 
     Pirate.create({
-        title,
-        price,
-        description
+        name,image,booty,quote,position,pegLeg,eyePatch,hookHand
     })
         .then(res => response.json(res))
         .catch(err => response.status(400).json(err))
@@ -26,12 +24,12 @@ module.exports.getDetails = (request, response) => {
 }
 
 // turn on validtions for edit
-const opts = {runValidators:true, new:true};
-module.exports.updatePirate = (request, response) => {
-    Pirate.findOneAndUpdate({_id: request.params.id}, request.body, opts)
-        .then(res => response.json(res))
-        .catch(err => response.status(400).json(err))
-}
+// const opts = {runValidators:true, new:true};
+// module.exports.updatePirate = (request, response) => {
+//     Pirate.findOneAndUpdate({_id: request.params.id}, request.body, opts)
+//         .then(res => response.json(res))
+//         .catch(err => response.status(400).json(err))
+// }
 
 module.exports.deletePirate = (request, response) => {
     Pirate.deleteOne({ _id: request.params.id })

@@ -1,3 +1,8 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
 h1 {
     text-align: center;
 }
@@ -8,14 +13,24 @@ form {
 }
 
 .App {
-    width: 380px;
+    width: 750px;
     margin-left: auto;
     margin-right: auto;
     border: 1px black;
-    height: 300px;
-    padding-left: 10px;
+    height:  600px;
+    /* border: 2px solid black; */
 }
 
 .btn-delete {
     background-color: red;
+}
+
+
+.pirate-background {
+    background-color: orange;
+}
+
+.pirate-list {
+    width: 700px;
+
 }
