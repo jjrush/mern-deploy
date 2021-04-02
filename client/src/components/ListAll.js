@@ -24,23 +24,25 @@ const ListAll = (props) => {
 
     return (
         <div className="listAll">
-            <h2>All Pirates:</h2>
             {
                 pirates.map( (pirate, index) => {
                     return ( 
                         <div className="singlePirate" key={index}>
-                            <span></span>
-                            <p className="pirate-title">{pirate.title}</p>
-                            <p className="pirate-price">${pirate.price}</p>
-                            
-                            <p className="pirate-desc">{pirate.description}</p>
-                            <Link to={"/pirate/" + pirate._id}>
-                                <button className="btn-edit">Edit</button>
-                            </Link>
-                            <DeleteButton 
-                                id={pirate._id} 
-                                successCallback={()=>removeFromDom(pirate._id)}
-                            />
+                            <div className="img-div">
+                                <img src={pirate.image}></img>
+                            </div>
+                            <div className="content-div">
+                                <p className="pirate-title">{pirate.name}</p>
+                                <div className="buttons">
+                                    <Link to={"/pirate/" + pirate._id}>
+                                        <button className="btn-edit">View Pirate</button>
+                                    </Link>
+                                    <DeleteButton 
+                                        id={pirate._id} 
+                                        successCallback={()=>removeFromDom(pirate._id)}
+                                    />
+                                </div>
+                            </div>
                         </div>
                     )
                 })

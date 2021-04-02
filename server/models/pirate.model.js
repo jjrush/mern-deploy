@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-function validateTitle(value) {
+function validateName(value) {
+    return true;
+}
+
+function validateImage(value) {
     if ( value.length > 3 ) {
         return true
     } else {
@@ -8,57 +12,74 @@ function validateTitle(value) {
     }
 }
 
-function validatePrice(value) {
-    if ( value.length > 0 ) {
+function validateQuote(value) {
+    if ( value.length > 3 ) {
         return true
     } else {
         return false
     }
 }
-
-function validateDescription(value) {
-    if ( value.length >= 5 ) {
-        return true
-    } else {
-        return false
-    }
-}
-
 const PirateSchema = new mongoose.Schema({
-    title: {
+    name: {
         type: String,
         required: [
             true,
             "Title is required"
         ],
         validate: {
-            validator: validateTitle,
+            validator: validateName,
             message: "Title must be more than 3 characters"
         }
     },
 
-    price: {
+    image: {
         type: String,
         required: [
             true,
-            "Price is required"
+            "Image is required"
         ],
         validate: {
-            validator: validatePrice,
-            message: "Price cannot be negative"
+            validator: validateImage,
+            message: "Image must be a valid URL"
         }
     },
 
-    description: {
+    booty: {
+        type: Number,
+        required: true
+    },
+
+
+    quote: {
         type: String,
         required: [
             true,
-            "Description is required"
+            "A catch phrase is required"
         ],
         validate: {
-            validator: validateDescription,
-            message: "Description must be at least 5 characters"
+            validator: validateQuote,
+            message: "Catch phrase must be longer than 3 characters"
         }
-    }
+    },
+
+    position: {
+        type: String,
+        required: true
+    },
+
+    pegLeg: {
+        type: String,
+        required: true
+    },
+
+    eyePatch: {
+        type: String,
+        required: true
+    },
+
+    hookHand: {
+        type: String,
+        required: true
+    },
 }, { timestamps: true });
 module.exports = mongoose.model('Pirate', PirateSchema);

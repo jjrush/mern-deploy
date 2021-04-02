@@ -1,52 +1,66 @@
-.showAllPirate h2 {
-    text-align: center;
+.listAll {
+    width: 700px;
+    margin: auto;
+    border: 2px solid black;
+    background-color: orange;
+    padding-top: 10px;
 }
 
-.showAllPirate p {
-    background-color: none;
+.listAll img {
+    width: 100px;
+}
+
+.img-div {
+    width: 60px;
+    /* border: 1px solid black; */
+    margin-left: 20px;
+    display: inline-block;
+    padding-top: 40px
 }
 
 .singlePirate {
-    background-color: lightblue;
-    margin-bottom: 20px;
-    text-align:center;
+    background-color: white;
+    width: 600px;
+    height: 130px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.content-div {
+    text-align: center;
+    height: 600px;
+    display: inline-block;
 }
 
 .pirate-title {
-    display: inline;
-    vertical-align: middle; 
-    display:inline-block; 
-    background-color:coral;
-    width: 200px;
-    height: 40px;
-    border-radius: 20px;
-    margin-left: 70px;
-    line-height: 40px;
+    display: block;
+    margin-left: 75px;
+    margin-top: 10px;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 40px;
+    margin-left: 100px;
 }
 
 .btn-edit {
-    margin-right: 285px;
+    margin-right: 50px;
+    width: 120px;
+    height: 35px;
+    background-color: lightblue;
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
 }
 
-.pirate-price {
-    display: inline;
-    background-color: whitesmoke;
-    height: 20px;
-    width: 80px;
-    border-radius: 20px;
-    justify-content: center;
-    float: right;
-}   
-
-.pirate-desc {
-    width: 340px;
-    background-color: white;
-    justify-content: center;
-    margin-left: 20px;
-    border-radius: 40px;
-    height: 50px;
+.btn-delete {
+    width: 150px;
+    height: 35px;
+    font-size: 120%;
+    color: white;
+    font-weight: bold;
 }
 
-span {
-    line-height: 50px;
-}
