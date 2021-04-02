@@ -24,8 +24,9 @@ const PirateForm = (props) => {
         setBootyValidation("");
         setImageValidation("");
         setQuoteValidation("");
-        
+        console.log("name" + name)
         if ( name === "" ) {
+            console.log("here")
             setNameValidation("You must include a name");
         } 
         if ( image === "" ) {
@@ -42,10 +43,6 @@ const PirateForm = (props) => {
 
         if ( nameValidation == "" && bootyValidation == "" && imageValidation == ""  && quoteValidation == "" )
         {
-            setNameValidation("");
-            setImageValidation("");
-            setBootyValidation("");
-            setQuoteValidation("");
             onSubmit({name,image,booty,quote,pegLeg,eyePatch,hookHand,position});
         }
     }
@@ -82,22 +79,22 @@ const PirateForm = (props) => {
                         <ul>
                         {/* frontend validations */}
                         {
-                            nameValidation !== "" && name === "" && !errors.name ?
+                            nameValidation !== "" && name === ""  ?
                                 <li className="validation-field">{nameValidation}</li>
                                 : null
                         }
                         {
-                            imageValidation !== "" && image === "" && !errors.image ?
+                            imageValidation !== "" && image === "" ?
                                 <li className="validation-field">{imageValidation}</li>
                                 : null
                         }
                         {
-                            bootyValidation !== "" && parseInt(booty) < 0 && !errors.booty ?
+                            bootyValidation !== "" && parseInt(booty) < 0 ?
                                 <li className="validation-field">{bootyValidation}</li>
                                 : null
                         }
                         {
-                            quoteValidation !== "" && quote === "" && !errors.quote ?
+                            quoteValidation !== "" && quote === "" ?
                                 <li className="validation-field">{quoteValidation}</li>
                                 : null
                         }
