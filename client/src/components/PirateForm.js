@@ -16,34 +16,43 @@ const PirateForm = (props) => {
     const [ bootyValidation, setBootyValidation ] = useState("");
     const [ quoteValidation, setQuoteValidation ] = useState("");
 
+    const handleNameChange = () => {
+
+    }
     const onSubmitHandler = e => {
         e.preventDefault();
         setErrors([]);
 
-        setNameValidation("");
-        setBootyValidation("");
-        setImageValidation("");
-        setQuoteValidation("");
-        console.log("name" + name)
-        if ( name === "" ) {
-            console.log("here")
-            setNameValidation("You must include a name");
-        } 
-        if ( image === "" ) {
-            setImageValidation("You must include an image");
-        } 
-        
-        let b = parseInt(booty)
-        if ( b < 0 ) {
-            setBootyValidation("Treasure can not be negative");
-        } 
-        if ( quote === "" ) {
-            setQuoteValidation("You must include a quote");
-        } 
-
-        if ( nameValidation == "" && bootyValidation == "" && imageValidation == ""  && quoteValidation == "" )
+        // attempt to submit if all of our required fields are valid
+        if ( name !== "" && booty !== "" && image !== ""  && quote !== "" )
         {
             onSubmit({name,image,booty,quote,pegLeg,eyePatch,hookHand,position});
+        } else {
+            // set the appropriate errors
+            if ( name == "" ) {
+                setNameValidation("You must include a name");
+            } else {
+                setNameValidation("");
+            }
+    
+            if ( image === "" ) {
+                setImageValidation("You must include an image");
+            } else {
+                setImageValidation("");
+            }
+            
+            let b = parseInt(booty)
+            if ( b < 0 ) {
+                setBootyValidation("Treasure can not be negative");
+            } else {
+                setBootyValidation("");
+            }
+    
+            if ( quote === "" ) {
+                setQuoteValidation("You must include a quote");
+            } else {
+                setQuoteValidation("");
+            }
         }
     }
 
@@ -79,7 +88,7 @@ const PirateForm = (props) => {
                         <ul>
                         {/* frontend validations */}
                         {
-                            nameValidation !== "" && name === ""  ?
+                            nameValidation !== "" && name === "" ?
                                 <li className="validation-field">{nameValidation}</li>
                                 : null
                         }
