@@ -22,7 +22,7 @@ const AddPirate = (props) => {
     }, [])
 
     const createPirate = pirate => {
-        console.log("subitting")
+        console.log("Creating")
         axios.post('http://localhost:8000/api/pirate', pirate)
             .then( res => {
                 pirates.push(res.data);
@@ -32,8 +32,8 @@ const AddPirate = (props) => {
             })
             // catch our backend validations in case they didn't meet our criteria
             .catch(err=>{
-                console.log("error");
-                console.log(err.response.data.errors);
+                // console.log("error");
+                // console.log(err.response.data.errors);
                 setErrors(err.response.data.errors);
             })      
     }
